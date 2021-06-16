@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- font-awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Jobs-list</title>
+</head>
+
+<body>
+    <!-- nav-bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="dash.html">Hi, Rishu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="employess-list.html">Emloyess</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="job-list.html">Jobs</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" placeholder="Search"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-success btn-sm" type="button" id="button-addon2"><i class="fa fa-search"
+                                aria-hidden="true"></i></button>
+                    </div>
+                </form>
+                <a href="" class="btn ms-3 btn-sm btn-warning">Log Out</a>
+            </div>
+        </div>
+    </nav>
+    <!-- nav-bar -->
+    <!-- dashboard-contents -->
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-lg-3 col-md-3">
+                <div class="list-group small">
+                    <div class="list-group-item active">Jobs data</div>
+                    <a href="" class="list-group-item" data-bs-toggle="modal" data-bs-target="#add_job">Add
+                        Job</a>
+                    <a href="employess-list.html" class="list-group-item">View all Jobs</a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <table class="table table-striped table-hover bg-light small">
+                    <tr class=" table-dark ">
+                        <td>Id</td>
+                        <td>Job Name</td>
+                        <td>Details</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Graphic Designer</td>
+                        <td><a class="btn w-100 btn-info btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#job_details"> Details</a></td>
+                        <td><a class="btn w-100 btn-warning btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#edit_job">Edit</a></td>
+                        <td><a class="btn w-100 btn-danger btn-sm"
+                                onclick="confirm('Are you sure you want to delete \' Graphic Designer job \' ?')">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Web designer</td>
+                        <td><a class="btn w-100 btn-info btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#job_details">Details</a></td>
+                        <td><a class="btn w-100 btn-warning btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#edit_job">Edit</a></td>
+                        <td><a class="btn w-100 btn-danger btn-sm">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Web Developer</td>
+                        <td><a class="btn w-100 btn-info btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#job_details">Details</a></td>
+                        <td><a class="btn w-100 btn-warning btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#edit_job">Edit</a></td>
+                        <td><a class="btn w-100 btn-danger btn-sm">Delete</a></td>
+                    </tr>
+                    
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <!-- dashboard-contents -->
+
+
+    <!-- add employee Modal -->
+    <div class="modal fade" id="add_job" tabindex="-1" aria-labelledby="add_job" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Job Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="date" class="form-control form-control-sm" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-sm" placeholder="Job name"
+                                required>
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-sm w-100 btn-success">Add New Job</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Deatials-Modal -->
+    <div class="modal fade" id="job_details" tabindex="-1" aria-labelledby="employess_details" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Employee detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Id</th>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th>Job added date</th>
+                        <td>29th july 2020</td>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <td>Graphic Designer</td>
+                    </tr>
+                   
+
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- edit employess Deatials-Modal -->
+    <div class="modal fade" id="edit_job" tabindex="-1" aria-labelledby="edit_job" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Employee detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="date" class="form-control form-control-sm" value="12-08-2020" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-sm" value="Graphic designer" required>
+                        </div>
+                       
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-sm w-100 btn-success">Update Job</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
